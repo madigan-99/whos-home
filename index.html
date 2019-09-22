@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Who's Home</title>
+        <meta charset="utf-8">
+            <link rel="icon" type="image/gif" href="images/favicon.png" sizes="16x16" />
+                <!--Line 7 adds favicon -- this is the brain image-->
+            <link rel="stylesheet" href="style.css" />
+            <script type="text/javascript" src="script.js"></script>
+        </head>
+    <body>
+        <center><h2>Who's Home At 5626</h2></center>
+        <hr>
+        <center>
+            <div class = "home"></div> Home
+            <div class = "away"></div> Away
+        </center>
+        <center>
+            <div class = "person">Aidan</div>
+            <div class = "person">Brian</div>
+            <div class = "person">Jan</div>
+            <div class = "person">Hanna</div>
+            <div class = "person">Madoka</div>
+            <div class = "person">Michael</div>
+            <div class = "person">YuYu</div>
+        </center>
+        <div id="storage" style="display:none;"> </div>
+        <div id="displayed"> </div>
+
+        <script> 
+            $.get("http://10.0.0.1/").success(function(data){ 
+              alert(data);
+              readPage(data);
+            });
+
+
+            function readPagee(content) {
+              // code that depends on content goes here...
+            }
+        </script>
+
+        <script>
+            var responseHTML = document.createElement("body");
+            function getBody(content) { 
+               var x = content.indexOf("tbody");
+               x = content.indexOf(">", x);    
+               var y = content.lastIndexOf("</tbody>"); 
+               return content.slice(x + 1, y);
+            } 
+            function getContent(content, target) {
+               target.innerHTML =  getBody(content);
+            }
+
+
+            document.getElementById("displayed").innerHTML = responseHTML.innerHTML;
+        </script>
+    </body>
+</html>

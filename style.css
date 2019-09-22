@@ -1,0 +1,33 @@
+.person { 
+	font-size: 1.5em; 
+	padding: 1.5em;
+	background-color: grey;
+	display: inline-block;
+	width: 4em;
+	text-align: center;
+	margin: 1em;
+	font-weight: bold;
+}
+
+hr {
+	width: 60%;
+}
+
+.home {
+	padding: .7em;
+	background-color: green;
+	width: .7em;
+	display: inline-block;
+	margin-top: 1em;
+
+}
+
+.away {
+	padding: .7em;
+	background-color: red;
+	width: .7em;
+	display: inline-block;
+	margin-left: 1em;
+	margin-top: 1em;
+	
+}
